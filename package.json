@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "pm2 start app.js -i max && pm2 logs",
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.15",
+    "pm2": "^5.1.2",
     "pug": "2.0.0-beta11"
   }
 }
