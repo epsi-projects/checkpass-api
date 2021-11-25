@@ -10,14 +10,14 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/password', function (req, res, next) {
+router.post('/password', function (req, res) {
+  console.log('req.body.password', req.body.password)
   let { crackTime, advices } = testPassword(req.body.password)
-  res.status(200).json({
-    'result': crackTime.time * 1000,
-    'quantum': (crackTime.time * 1000) / 2000000,
+  return res.status(200).json({
+    'computer': crackTime.time / 60,
+    'quantum': (crackTime.time / 60) / 2000000,
     advices
   });
-  next();
 });
 
 module.exports = router;
