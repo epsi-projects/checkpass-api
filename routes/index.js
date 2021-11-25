@@ -4,12 +4,6 @@ var router = express.Router();
 const { testPassword } = require('../functions/index')
 
 
-
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
 router.post('/password', function (req, res) {
   res.set('Access-Control-Allow-Origin', '*');
   console.log('req.body.password', req.body.password)
