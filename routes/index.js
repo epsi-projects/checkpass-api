@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/password', cors(), function (req, res) {
+router.post('/password', function (req, res) {
   console.log('req.body.password', req.body.password)
   let { crackTime, advices } = testPassword(req.body.password)
   return res.status(200).json({
