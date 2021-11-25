@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "pm2 start app.js && pm2 logs",
+    "start": "pm2 start index.js && pm2 logs",
     "dev": "nodemon app.js"
   },
   "dependencies": {
